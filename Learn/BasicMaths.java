@@ -7,7 +7,7 @@ public class BasicMaths {
         while (num != 0) {
             int digit = num%10;
             System.out.println(digit);
-            num = num/10; // int/int = int (floating point gets truncated)
+            num = num/10; // (int)/(int) = (int) (floating point gets truncated)
         }
     }
     

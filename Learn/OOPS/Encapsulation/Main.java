@@ -1,6 +1,8 @@
 package OOPS.Encapsulation;
 import java.util.Scanner;
 
+// Encapsulation is hiding data (security layer) by using keywords that modify how the attribute/method of a class can be accessed from external classes/code.
+// Prevents data leak by hiding the attributes not required by external code.
 
 public class Main {
 
