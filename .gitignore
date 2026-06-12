@@ -1,2 +1,4 @@
 *.class
 .vscode
+.Ds_store
+../*.Ds_store
