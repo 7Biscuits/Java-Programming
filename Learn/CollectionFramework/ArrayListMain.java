@@ -2,10 +2,15 @@ package CollectionFramework;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
+
+/* note: 
+LinkedList, Vector they all implement the same List interface as ArrayList,
+so most of the methods that can be applied on arraylist they can also be applied on
+LLs and Vectors.
+*/
 
 public class ArrayListMain {
 
@@ -23,7 +28,7 @@ public class ArrayListMain {
         }
         System.out.println(list);
 
-        // remove elements by index
+        // remove element by index
         list.remove(0);
 
         // remove common elements of 2 arraylists:
