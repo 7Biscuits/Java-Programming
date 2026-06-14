@@ -51,10 +51,7 @@ class TextEditor implements EditorCommands {
 
 public class StackMain {
 
-    static void test() {
-        
-    }
-    public static void main(String[] args) {
+    static void textEditor() {
         System.out.println("Welcome to Text Editor");
         TextEditor editor = new TextEditor(new Stack<String>());
         Scanner sc = new Scanner(System.in);
@@ -90,4 +87,20 @@ public class StackMain {
         }
     }
 
+    static void testLIFO() {
+        Stack<Integer> stk = new Stack<>();
+        for (int i = 0; i < 11; i++) {
+            stk.add(i);
+            System.out.println("Added " + i + " to the stack");
+        }
+        System.out.println("Size of the stack: " + stk.size());
+        int size = stk.size();
+        for (int i = 0; i < size; i++) {
+            System.out.println(stk.pop());
+        }
+    }
+
+    public static void main(String[] args) {
+        textEditor();
+    }
 }
