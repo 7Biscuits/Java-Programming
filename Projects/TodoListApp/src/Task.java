@@ -18,6 +18,10 @@ public class Task {
         return id;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public void setComplete() {
         isCompleted = true;
     }
