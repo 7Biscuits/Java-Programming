@@ -57,6 +57,17 @@ public class BasicMaths {
             System.out.println("The given number is not a palindrome.");
     }
 
+    // method to print the sum of all the divisors of a number
+    static void divisorSum(int n) {
+        int sum = 0;
+        for (int i=1; i<=n; i++) {
+            if (n%i == 0) { // this means i is a divisor
+                sum += i;
+            }
+        }
+        System.out.println("The sum of divisors of " + n + " is " + sum);
+    }
+
     static void primeNumber() {
         int num = 11;
         if (num <= 1) {
@@ -144,6 +155,6 @@ public class BasicMaths {
     }
 
     public static void main(String[] args) {
-        nPrimeNumbers();
+        divisorSum(6);
     }
 }
