@@ -20,7 +20,7 @@ abstract class Bird {
 class Sparrow extends Bird {
 
     public Sparrow() {
-        super.name = "Sparrow";
+        name = "Sparrow";
     }
 
     @Override // since method exists in the parent class.
