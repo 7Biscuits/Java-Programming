@@ -40,15 +40,14 @@ class Student {
 
 /*
  * If the hashset is of a custom object, the hashCode() and equals() need to be
- * overriden and
- * be customly written.
- */
+ * overriden and be customly written.
+*/
 
 public class SetCustomObject {
     public static void main(String[] args) {
         Student s1 = new Student(1, "name");
         Student s2 = new Student(2, "name");
-        Student s3 = new Student(3, "name");
+        Student s3 = new Student(2, "name"); // won't be added due to non-unique rollno
 
         HashSet<Student> hs = new HashSet<>();
         hs.add(s1);
