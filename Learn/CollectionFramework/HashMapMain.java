@@ -1,4 +1,4 @@
-package CollectionFramework;
+// package CollectionFramework;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +24,7 @@ public class HashMapMain {
             return;
         }
 
+        // HashMap traversal
         for (Map.Entry<Integer, String> entry : hm.entrySet()) {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
