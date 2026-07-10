@@ -12,6 +12,10 @@ class Student {
         this.name = name;
     }
 
+    // When you pass an object to System.out.println(),
+    // Java automatically calls that object's toString() method
+    // to obtain a String representation. By overriding toString(),
+    // you can customize how the object is displayed.
     @Override
     public String toString() {
         return "Student{" +
@@ -19,6 +23,11 @@ class Student {
                 ", name='" + name + "\'" +
                 "}";
     }
+
+    /*
+     * If the hashset is of a custom object, the hashCode() and equals() need to be
+     * overriden and be customly written.
+     */
 
     @Override
     public boolean equals(Object o) {
@@ -37,11 +46,6 @@ class Student {
         return Objects.hash(rollno);
     }
 }
-
-/*
- * If the hashset is of a custom object, the hashCode() and equals() need to be
- * overriden and be customly written.
-*/
 
 public class SetCustomObject {
     public static void main(String[] args) {
