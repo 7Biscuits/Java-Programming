@@ -1,6 +1,7 @@
 package CollectionFramework;
 
-// this code discusses how to define ways of sorting collections of custom objects.
+// this code discusses how to use comparable interface to define sorting orders for collection of custom objects.
+// comparable interface requires the object's class to be modified.
 
 import java.util.ArrayList;
 import java.util.Collections;
