@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-// this code discusses how to use comparable interface to define sorting order of a collection of custom objects.
+// this code discusses how to use comparator interface to define sorting order of a collection of custom objects.
 // comparator interface doesn't require the object's class to be modified.
 // there are 3 ways to define a comparator. 1st is writing a class, 2nd is a shorthand method,
 // and 3rd is using lambda expression

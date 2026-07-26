@@ -30,8 +30,7 @@ class Student implements Comparable<Student> {
         // if the age is same, define their order according to their name in
         // lexographically order.
         if (this.age == s.age) {
-            // since this.name is a String object, compareTo method is already defined for
-            // it
+            // since this.name is a String object, compareTo method is already defined for it
             return this.name.compareTo(s.name);
         }
         return s.age - this.age;
