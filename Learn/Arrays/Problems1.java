@@ -1,5 +1,3 @@
-// package Arrays;
-
 public class Problems1 {
 
     static void findUnsortedElement(int[] arr) {
@@ -43,16 +41,13 @@ public class Problems1 {
         }
     }
 
-    // print alternate extreme elements of array
+    // copy alternate extreme elements of an array to another array
     // [1, 2, 3, 4, 5, 6] -> [1, 6, 2, 5, 3, 4]
     static void alternateExtremeElements(int[] arr) {
         int ans[] = new int[arr.length];
         int left = 0;
         int right = arr.length - 1;
         for (int i = 0; i < arr.length - 1; i += 2) {
-            if (right == left) {
-                break;
-            }
             ans[i] = arr[left];
             ans[i + 1] = arr[right];
             left++;
@@ -70,7 +65,19 @@ public class Problems1 {
         }
     }
 
+    // print alternate extreme elements of an array
+    static void printAlternateExtremeElements(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            System.out.print(arr[i] + ", " + arr[arr.length - 1 - i] + ", ");
+        }
+        if (arr.length % 2 != 0) {
+            System.out.print(arr[arr.length / 2]);
+        }
+    }
+
     public static void main(String[] args) {
-        alternateExtremeElements(new int[] { 1, 2, 3, 4, 5, 6, 7 });
+        printAlternateExtremeElements(new int[] { 1, 2, 3, 4, 5 });
+        System.out.println();
+        alternateExtremeElements(new int[] { 1, 2, 3, 4, 5 });
     }
 }
