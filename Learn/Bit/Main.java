@@ -8,8 +8,8 @@ public class Main {
      * logical operators for bits:
      * bitwise AND: n & m
      * bitwise OR : n | m
-     * bitwise XOR: n ^ m; bit is 1 if the corresponding bits are different: 1100 ^
-     * 1010 = 0110
+     * bitwise XOR: n ^ m; bit is 1 if the corresponding bits are different:
+     * 1100 ^ 1010 = 0110
      * bitwise NOT: ~n: flips each bit: ~(1001) = 0110
      */
 
@@ -150,7 +150,7 @@ public class Main {
         }
     }
 
-    /*
+    /* problem: all elements appear twice except one, find the number that appears only once
      * logic:
      * 1^2^3^6^3^2^1 = (1^1)^(2^2)^(3^3)^6 = 6. Since n^n = 0
      * time complexity: O(n)
@@ -163,10 +163,6 @@ public class Main {
             unique = unique ^ arr[i];
         }
         System.out.println(unique + " is the unique element.");
-    }
-
-    static void findTwoUniqueElements() {
-        int[] arr = { 1, 2, 3, 6, 7, 3, 2, 1 };
     }
 
     /*

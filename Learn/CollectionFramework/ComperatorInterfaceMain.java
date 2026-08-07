@@ -35,7 +35,7 @@ class Student {
     }
 }
 
-// writing a class that implements comparator interface.
+// writing a comperator class that implements comparator interface.
 // this improves reusability
 class AgeComparator implements Comparator<Student> {
     @Override

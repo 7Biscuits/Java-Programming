@@ -37,7 +37,7 @@ public class StaticKeyword {
         HeadBoy s3 = new HeadBoy();
         s3.name = "Rudransh";
         System.out.println(s3.schoolName); // Sbs Bgn
-        System.out.println(s3.designation);
+        System.out.println(s3.designation); // HeadBoy
         s3.study();
     }
 }
