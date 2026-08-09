@@ -40,9 +40,9 @@ public class Problems4 {
     static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> list = new ArrayList<>();
-        for (int i=0; i<nums.length-2; i++) {
-            for (int j=i+1; j<nums.length-1; j++) {
-                for (int k=j+1; k<nums.length; k++) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            for (int j = i + 1; j < nums.length - 1; j++) {
+                for (int k = j + 1; k < nums.length; k++) {
                     if (nums[i] + nums[j] + nums[k] == 0) {
                         List<Integer> elems = new ArrayList<>();
                         elems.add(nums[i]);
@@ -57,6 +57,23 @@ public class Problems4 {
             }
         }
         return list;
+    }
+
+    // remove duplicate elements from a sorted array.
+    static int removeDuplicates(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        for (int n : nums) {
+            if (!list.contains(n)) {
+                list.add(n);
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (i < list.size())
+                nums[i] = list.get(i);
+            else
+                nums[i] = 0;
+        }
+        return list.size();
     }
 
     public static void main(String[] args) {
