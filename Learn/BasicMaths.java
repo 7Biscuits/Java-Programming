@@ -47,8 +47,8 @@ public class BasicMaths {
         int revNum = 0;
         int tempNum = num;
         while (tempNum != 0) {
-            revNum = (revNum*10)+(tempNum%10);
-            tempNum /= 10;
+            revNum = (revNum*10)+(tempNum%10); // tempNum%10 returns the last digit of tempNum
+            tempNum /= 10; // removes the last digit of tempNum
         }
         System.out.println(revNum);
         if (revNum == num)

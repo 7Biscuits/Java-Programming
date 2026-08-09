@@ -41,7 +41,7 @@ class Student {
 
     @Override
     public int hashCode() {
-        // generate a hashcode based on rollno so that repetitive rollno can't be added
+        // generate a hashcode based on rollno so that non-unique rollno can't be added
         // into the hashset
         return Objects.hash(rollno);
     }
