@@ -76,6 +76,7 @@ public class Problems4 {
         return list.size();
     }
 
+    // remove duplicate elements using a HashMap.
     static int removeDuplicates2(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int n : nums) {
@@ -87,6 +88,22 @@ public class Problems4 {
             nums[i] = keys.get(i);
         }
         return keys.size();
+    }
+
+    // remove duplicate elements using two-pointer method.
+    static int removeDuplicates3(int[] nums) {
+        int i = 0;
+        int j = 1;
+        while (j < nums.length) {
+            if (nums[i] != nums[j]) {
+                nums[i+1] = nums[j];
+                i++;
+            }
+            else {
+                j++;
+            }
+        }
+        return i+1;
     }
 
     public static void main(String[] args) {
