@@ -51,14 +51,20 @@ public class Problems2 {
 
     // more efficient way to achieve same result in less time complexity. 
     static void getModeUsingHashmap(int[] arr) {
-        HashMap<Integer, Integer> hm = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int n : arr) {
-            hm.put(n, hm.getOrDefault(n, 0)+1);
+            map.put(n, map.getOrDefault(n, 0)+1);
+            /* getOrDefault method:
+            if key exists -> returns the stored value
+            if key does not exist -> return the fallback/default value.
+            here, if n is present in the map then return increment the stored value by 1
+            if n is not present then add it in the map and the value will be default value +1 -> 0 + 1.
+            */ 
         }
 
         int maxFrequency = -1;
         int mode = -1;
-        for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + "->" + entry.getValue());
             if (entry.getValue() > maxFrequency) {
                 maxFrequency = entry.getValue();
