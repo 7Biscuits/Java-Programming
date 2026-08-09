@@ -59,7 +59,7 @@ public class Problems4 {
         return list;
     }
 
-    // remove duplicate elements from a sorted array.
+    // remove duplicate elements from a sorted array. -> bruteforce
     static int removeDuplicates(int[] nums) {
         List<Integer> list = new ArrayList<>();
         for (int n : nums) {
@@ -74,6 +74,19 @@ public class Problems4 {
                 nums[i] = 0;
         }
         return list.size();
+    }
+
+    static int removeDuplicates2(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+        List<Integer> keys = new ArrayList<>(map.keySet());
+        Collections.sort(keys);
+        for (int i = 0; i < keys.size(); i++) {
+            nums[i] = keys.get(i);
+        }
+        return keys.size();
     }
 
     public static void main(String[] args) {
