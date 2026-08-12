@@ -60,6 +60,7 @@ public class Problems4 {
     }
 
     // remove duplicate elements from a sorted array. -> bruteforce
+    // [1, 2, 2, 2, 3, 3, 4] -> [1, 2, 3, 4, _, _]
     static int removeDuplicates(int[] nums) {
         List<Integer> list = new ArrayList<>();
         for (int n : nums) {
@@ -106,11 +107,45 @@ public class Problems4 {
         return i+1;
     }
 
-    public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5 };
-        arr = twoSum2(arr, 8);
+    // find the first repeating number
+    // [1, 2, 3, 4, 3, 5] -> 3 since it repeats
+    // time complexity -> O(n^2)
+    static int firstRepeatingNumber(int[] arr) {
+        int num = arr[0];
         for (int n : arr) {
-            System.out.print(n + ", ");
+            int tempCount = 0;
+            for (int a : arr) {
+                if (a == n) tempCount++;
+            }
+            if (tempCount > 1) {
+                num = n;
+            } else {
+                num = -1;
+            }
         }
+        return num;
+    }
+
+    // using hashmap -> O(n)
+    static int firstRepeatingNumber2(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int n : arr) {
+            map.put(n, map.getOrDefault(n, 0)+1);
+        }
+        int repeating = arr[0];
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 1) {
+                repeating = entry.getKey();
+            } else {
+                repeating = -1;
+            }
+        }
+        return repeating;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 4 };
+        int n = firstRepeatingNumber2(arr);
+        System.out.println(n);
     }
 }
