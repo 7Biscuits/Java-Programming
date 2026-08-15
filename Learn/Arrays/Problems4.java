@@ -97,14 +97,13 @@ public class Problems4 {
         int j = 1;
         while (j < nums.length) {
             if (nums[i] != nums[j]) {
-                nums[i+1] = nums[j];
+                nums[i + 1] = nums[j];
                 i++;
-            }
-            else {
+            } else {
                 j++;
             }
         }
-        return i+1;
+        return i + 1;
     }
 
     // find the first repeating number
@@ -115,7 +114,8 @@ public class Problems4 {
         for (int n : arr) {
             int tempCount = 0;
             for (int a : arr) {
-                if (a == n) tempCount++;
+                if (a == n)
+                    tempCount++;
             }
             if (tempCount > 1) {
                 num = n;
@@ -130,18 +130,52 @@ public class Problems4 {
     static int firstRepeatingNumber2(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int n : arr) {
-            map.put(n, map.getOrDefault(n, 0)+1);
+            map.put(n, map.getOrDefault(n, 0) + 1);
         }
-        int repeating = arr[0];
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
-                repeating = entry.getKey();
-            } else {
-                repeating = -1;
+                return entry.getKey();
             }
         }
-        return repeating;
+        return -1;
     }
+
+    // [1, 2, 3, 4, 5, 1] -> 3rd index is the pivot point since 1+2+3 = 5+1
+    // static int pivotIndex(int[] nums) {
+    //     int right = nums.length - 1;
+    //     int sumL = 0;
+    //     int sumR = 0;
+    //     for (int i = 0; i < nums.length; i++) {
+    //         if ((sumL == sumR) && (sumL != 0 && sumR != 0)) {
+    //             return i;
+    //         }
+    //         sumL += nums[i];
+    //         sumR += nums[right];
+    //     }
+    //     return -1;
+    // }
+
+    // [1, 7, 3, 6, 5, 6] -> index 3 is the pivot point since sum of left of 3rd index = sum of right.
+    static int pivotIndex(int[] nums) {
+        for (int i=0; i<nums.length; i++) {
+            int sumL = 0;
+            int sumR = 0;
+            for (int j=0; j<nums.length; j++) {
+                if (j<i) {
+                    sumL += nums[j];
+                }
+                if (j>i) {
+                    sumR += nums[j];
+                }
+            }
+            if (sumR == sumL) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
 
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 4 };
