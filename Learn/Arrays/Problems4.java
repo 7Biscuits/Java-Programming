@@ -140,31 +140,16 @@ public class Problems4 {
         return -1;
     }
 
-    // [1, 2, 3, 4, 5, 1] -> 3rd index is the pivot point since 1+2+3 = 5+1
-    // static int pivotIndex(int[] nums) {
-    //     int right = nums.length - 1;
-    //     int sumL = 0;
-    //     int sumR = 0;
-    //     for (int i = 0; i < nums.length; i++) {
-    //         if ((sumL == sumR) && (sumL != 0 && sumR != 0)) {
-    //             return i;
-    //         }
-    //         sumL += nums[i];
-    //         sumR += nums[right];
-    //     }
-    //     return -1;
-    // }
-
-    // [1, 7, 3, 6, 5, 6] -> index 3 is the pivot point since sum of left of 3rd index = sum of right.
+    // [1, 7, 3, 6, 5, 6] -> index 3 is the pivot point since sum of left of 3rd
+    // index = sum of right.
     static int pivotIndex(int[] nums) {
-        for (int i=0; i<nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int sumL = 0;
             int sumR = 0;
-            for (int j=0; j<nums.length; j++) {
-                if (j<i) {
+            for (int j = 0; j < nums.length; j++) {
+                if (j < i) {
                     sumL += nums[j];
-                }
-                if (j>i) {
+                } else if (j > i) {
                     sumR += nums[j];
                 }
             }
@@ -175,11 +160,28 @@ public class Problems4 {
         return -1;
     }
 
+    // [1, 4, 4, 5, 2, 2] -> missing number: 3 & 6, since range is [0, 6].
+    static List<Integer> missingNumber(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            int index = Math.abs(nums[i]) - 1;
+            if (nums[index] > 0) {
+                nums[index] = -nums[index];
+            }
+        }
 
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                list.add(i+1);
+            }
+        }
+        return list;
+    }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 4 };
-        int n = firstRepeatingNumber2(arr);
-        System.out.println(n);
+        int[] arr = { 1, 4, 4, 5, 2, 2 };
+        for (int n : missingNumber(arr)) {
+            System.out.println(n);
+        }
     }
 }
