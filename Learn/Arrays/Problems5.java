@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problems5 {
     /*
      * kadane's algorithm - Given an integer array nums, find the subarray with the
@@ -16,6 +19,20 @@ public class Problems5 {
         }
 
         return maxSum;
+    }
+
+    // [[1, 2, 3], [4, 5, 6], [7, 8, 9]] -> 6 + 16 + 24
+    // [[1], [2, 2], [3, 3, 3]]
+    static List<Integer> rowSums(int[][] arr) {
+        List<Integer> list = new ArrayList<>();
+        for (int i=0; i<arr.length; i++) {
+            int sum = 0;
+            for (int j=0; j<arr[i].length; j++) {
+                sum += arr[i][j];
+            }
+            list.add(sum);
+        }
+        return list;
     }
 
     public static void main(String[] args) {
